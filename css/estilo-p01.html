@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es-ES">
+   <head>
+      <title>Pregunta</title>
+      <meta charset="utf-8"/>
+      <style type="text/css">
+         p+p::first-letter {
+            border: thin green solid;
+            padding: 5px;
+            font-size:3em;
+         }
+         ::first-line {
+            background-color: lightgray;
+         }
+         p>a:before {
+            content: "¡Pulsa aquí para ir a "
+         }
+         a:after {
+            content: "!"
+         }
+      </style>
+   </head>
+   <body>
+      <p> Empezando el párrafo </p>
+      <p> Párrafo de inicio con enlace a
+         <a href="http://www.google.es">Google</a>.
+         Vamos a hacer esta línea larga para observar el estilo.
+      </p>
+      <p style="font-size:18pt">
+         <span id="referencia1">Visita el
+            <a href="https://www3.gobiernodecanarias.org/medusa/edublog/cifpcesarmanrique/"> César </a>
+         </span>
+      </p>
+   </body>
+</html>
+
+

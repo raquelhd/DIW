@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es-ES">
+  <head>
+    <title>Ejemplo de tamaños</title>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+      img {
+         background: lightgray;
+         border: 4px solid black;
+         margin: 2px;
+         min-width: 200px;
+         width:50%;
+         max-width: 400px;
+      }
+      .enborder{
+        box-sizing: border-box;
+      }
+      .encontent{
+        box-sizing: content-box;
+      }      
+    </style>
+  </head>
+  <body>
+    <img  class="enborder" src="logo_cesar.jpg" alt="César">
+    <img  class="encontent" src="logo_cesar.jpg" alt="César">
+  </body>
+</html>
+

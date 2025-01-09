@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es-ES">
+   <head>
+      <title>Ejemplo</title>
+      <meta charset="utf-8"/>
+      <style type="text/css">
+         a:last-of-type:before {
+            content: "-> Pulsa aquí para ir a "
+         }
+         a:nth-last-child(2) {
+            color: orange;
+         }
+         p > a:last-of-type {
+            font-style: italic;
+            font-weight: bold;
+            font-size: 20pt;
+         } 
+      </style>
+   </head>
+   <body>
+      <p> Empezando el párrafo </p>
+      <p> Párrafo de inicio con enlace a
+         <a href="http://www.google.es">Google</a>.
+         <a href="http://www.youtube.com">Youtube</a>
+      </p>
+      <p style="font-size:18pt">
+         <span id="referencia1">Visita el 
+            <a href="https://www3.gobiernodecanarias.org/medusa/edublog/cifpcesarmanrique/"> César </a>
+         </span>
+      </p>
+   </body>
+</html>
+
+

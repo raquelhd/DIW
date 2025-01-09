@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es-ES">
+	<head>
+	  <title>Ejemplo de position</title>
+	  <meta charset="utf-8"/>
+	  <style>
+	    img {
+	      top: 35px;
+	      left:150px;
+	      border: medium double black;
+	    } 
+	  </style>
+	</head> 
+	<body>
+	  <p>
+	    En un lugar de la Mancha, de cuyo nombre no quiero acordarme, 
+	    no ha mucho tiempo que vivía un hidalgo de los de lanza en 
+	    astillero, adarga antigua, rocín flaco y galgo corredor.
+	  </p>
+
+	  <p>
+	    <img id="portada" width="200px" src="quijote.jpg" alt="portada"/>
+	  </p>
+
+	  <p>
+	    Una olla de algo más vaca que carnero, salpicón las más noches, 
+	    duelos y quebrantos los sábados, lentejas los viernes, algún 
+	    palomino de añadidura los domingos, consumían las tres partes 
+	    de su hacienda.
+	  </p>
+
+	 <p>
+	    El resto della concluían sayo de velarte, calzas de velludo 
+	    para las fiestas con sus pantuflos de lo mismo, los días de 
+	    entre semana se honraba con su vellori de lo más fino
+	  </p>
+
+	  <p>
+	    Tenía en su casa una ama que pasaba de los cuarenta, y una 
+	    sobrina que no llegaba a los veinte, y un mozo de campo y 
+	    plaza, que así ensillaba el rocín como tomaba la podadera.
+	  </p>
+	  
+	  <p>
+	    <button>Static</button>
+	    <button>Relative</button>
+	    <button>Absolute</button>
+	    <button>Fixed</button>
+	  </p>
+
+	  <script>
+	    var buttons = document.getElementsByTagName("button");
+	    for (var i = 0; i < buttons.length; i++) {
+	      buttons[i].onclick = function(e) {
+	        document.getElementById("portada").style.position = 
+	          e.target.innerHTML;
+	      }; 
+	    }
+	  </script>
+	</body>
+ </html>

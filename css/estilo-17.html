@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es-ES">
+  <head>
+    <title>Ejemplo de selección de hijos</title>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+      p > a {
+        border: thick green solid;
+        padding: 5px;
+        color: orange;
+      }
+      #referencia2 > a {
+        border: thin yellow solid;
+        padding: 5px;      
+      }
+      p > * > a {
+        border: thin blue solid;
+        padding: 5px;            
+      }
+    </style>
+  </head> 
+  <body>
+    <p> Párrafo de inicio con enlace a 
+        <a href="http://www.google.es"> Google </a>
+    </p>
+    <p style="font-size:18pt">
+      <span id="referencia1">Visita el
+      <a href="https://www3.gobiernodecanarias.org/medusa/edublog/cifpcesarmanrique/"> César </a>
+      </span> 
+    </p>
+    <p style="font-size:18pt">
+      <span id="referencia2">Visita otra vez el
+      <a href="https://www3.gobiernodecanarias.org/medusa/edublog/cifpcesarmanrique/"> César </a>
+      </span> 
+    </p>
+  </body>
+</html>
+
+

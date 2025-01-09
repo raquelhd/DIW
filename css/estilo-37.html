@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es-ES">
+  <head>
+    <title>Ejemplo de visibilidad</title>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+      tr > th { text-align:left; background:gray; color:white}
+      tr > th:only-of-type {text-align:right; background: lightgray; color:gray}
+    </style>
+  </head> 
+  <body>
+    <table>
+      <tr>
+        <th>Día semana</th><th>Desayuno</th><th>Comida</th><th>Cena</th>
+      </tr>
+      <tr>
+        <th>Lunes</th><td>Leche</td><td>Macarrones</td><td>Fruta y yogur</td>
+      </tr>
+      <tr style="visibility:visible">
+        <th>Martes</th><td>Café con leche</td><td>Paella</td><td>Ensalada</td>
+      </tr>
+      <!-- ¡¡¡Repetido!!! -->
+      <tr style="visibility:collapse">
+        <th>Martes</th><td>Café con leche</td><td>Paella</td><td>Ensalada</td>
+      </tr>
+      <!-- ¡¡¡Repetido!!! -->
+      <tr style="visibility:hidden">
+        <th>Martes</th><td>Café con leche</td><td>Paella</td><td>Ensalada</td>
+      </tr>
+      <tr>
+        <th>Miércoles</th><td>Tostadas</td><td>Lentejas</td><td>Pizza</td>
+      </tr>
+    </table>
+  </body>
+</html>

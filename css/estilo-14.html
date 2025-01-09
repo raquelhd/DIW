@@ -1,0 +1,30 @@
+<!doctype html>
+   <html lang="es-ES">
+   <head>
+      <title>Ejemplo de selector por atributo</title>
+      <meta charset="utf-8"/>
+      <style type="text/css">
+         [class~="clase2"] {
+            border: thin black solid;
+            padding: 5px;
+         }
+         [lang|="en"] {
+          border: thin yellow solid;
+            padding: 5px;  
+         }
+      </style>
+   </head> 
+   <body>
+      <p> Párrafo de inicio </p>
+      <p style="color:red" lang="en-gb"> This paragraph in red colour </p>
+      <p style="color:green" lang="en-uk"> And this in green color</p>
+      <p class="clase1 clase2"> El que viene a continuación... </p>
+      <p style="font-size:18pt">
+         <span id="referencia1">Visita</span> 
+         el
+         <a href="https://www3.gobiernodecanarias.org/medusa/edublog/cifpcesarmanrique/"> César </a>
+      </p>
+   </body>
+</html>
+
+

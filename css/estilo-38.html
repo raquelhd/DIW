@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es-ES">
+  <head>
+    <title>Ejemplo de display: list-item -> in-line</title>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="favicon.gif" type="image/gif"/>
+    <style>
+      ul.menu > li {
+        display: inline;
+      }
+      ul.menu2 > li {
+        display: inline;
+        border-left: 2px solid black;
+        padding-left: 2px;
+      }
+      ul.menu3 > li {
+        display: inline;
+        border-left: 2px solid black;
+        padding-left: 2px;
+      }
+      ul.menu3 > li:last-child {
+        border-right: 2px solid black;
+        padding-right: 2px;
+      }
+    </style>
+
+  </head> 
+  <body> 
+    <ul>
+      <li>Primer elemento</li>
+      <li>Segundo elemento</li>
+      <li>Tercer elemento</li>
+    </ul>
+    <ul class="menu">
+      <li>Primer elemento</li>
+      <li>Segundo elemento</li>
+      <li>Tercer elemento</li>
+    </ul>
+    <ul class="menu2">
+      <li>Primer elemento</li>
+      <li>Segundo elemento</li>
+      <li>Tercer elemento</li>
+    </ul>
+    <ul class="menu3">
+      <li>Primer elemento</li>
+      <li>Segundo elemento</li>
+      <li>Tercer elemento</li>
+    </ul> 
+  </body>
+</html>
