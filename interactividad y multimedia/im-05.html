@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es-ES">
+
+<head>
+	<title>Test</title>
+	<meta charset="utf-8">
+</head>
+
+<body onload="alert('¡Bienvenidos!');"> 
+	<p id="p1">Primer párrafo</p>
+	<p onclick="cambiarFondo(this, 'red', 'ratón-click');">Párrafo intermedio</p>
+	<p id="p2" 
+		onmouseup ="cambiarFondo(this,'yellow', 'ratón-arriba');"
+		onmousedown="cambiarFondo(this,'blue', 'ratón-abajo');"
+		onmouseover="cambiarFondo(this,'gray', 'ratón-sobre');"
+		onmouseout ="cambiarFondo(this,'white', 'ratón-fuera');"
+		onmousemove="textoAccion('raton-moviéndose');"
+	>Segundo párrafo</p>
+
+	<input type="text" id="nombre"
+		onfocus="cambiarFondo(this,'brown','cajetin-foco');"
+		onchange="aMayusculas(this); cambiarFondo(this, 'white', 'cajetin-cambio');"
+	>
+
+	<p>Última acción <span id="accion"></span></p>
+	<p id="cesar">Visita el <a href="https://www3.gobiernodecanarias.org/medusa/edublog/cifpcesarmanrique/">César</a></p>
+
+	<script>
+		var p1 = document.getElementById("p1");
+		p1.onclick = function(){ cambiar(this); };		
+		function textoAccion(texto) {
+			document.getElementById('accion').innerHTML=texto;
+		}		
+		function cambiarFondo(elemento, color, texto) {
+			elemento.style.backgroundColor=color;
+			textoAccion(texto);
+		}		
+		function cambioDeFondoBlanco() {
+			cambiarFondo(this,"white", "cambio de fondo por event listener (a blanco)");
+		}		
+		function cambiar(elemento) {
+			elemento.innerHTML="Cambiado!";
+			textoAccion("Cambio por click");
+		}		
+		function aMayusculas(elemento) {
+			elemento.value = elemento.value.toUpperCase();
+		}		
+		document.getElementById("cesar").addEventListener("mouseover",
+			function() {
+				cambiarFondo(this,"yellow", "cambio de fondo por event listener (a amarillo)");
+			}
+		);		
+		document.getElementById("cesar").addEventListener("mouseout", cambioDeFondoBlanco);
+	</script>
+</body>
+
+</html>

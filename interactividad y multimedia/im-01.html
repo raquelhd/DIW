@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+   <head>
+       <title>DOM</title>
+       <meta charset="utf-8">
+   </head>
+   <body>
+      <p id="p1">Ejemplo de invocación a eventos </p>
+      <button id="button1" onclick="console.log('botón 1')">Botón 1</button> 
+      <button id="button2" onclick="funcion2()">Botón 2</button>
+      <button id="button3">Botón 3</button>
+      <button id="button4">Botón 4</button>
+      <button id="button5">Botón 5</button>
+
+      <script>
+         var b3 = document.getElementById("button3");
+         var b4 = document.getElementById("button4");
+         var b5 = document.getElementById("button5");
+         b3.onclick =  function(){funcion3()}; // b3.onclick=funcion3;
+         b4.onclick =  function(){alert("Has pulsado el botón 4")};
+         b5.onclick = function(){funcion5(5)}; //b5.onclick=funcion5(5) es incorrecto!!!
+
+         function funcion2(){
+          alert("Has pulsado el botón 2");
+         }
+
+         function funcion3(){
+          alert("Has pulsado el botón 3");
+         }
+
+         function funcion5(value){
+            var message="Has pasado el valor: " + value;
+            alert(message);
+         }
+      </script>
+
+   </body>
+</html> 
+
+
+
+

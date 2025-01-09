@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<title>Evento click</title> 
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<p onclick="this.innerHTML='this.innerHTML en atributo'">Pulsa el párrafo</p>
+		<p id="p1" onclick="accion('p1');">Tócalo también</p>
+		<p id="p2">Y éste, pero doble click</p>		
+
+		<script>
+			function accion(identificador) {
+				document.getElementById(identificador).innerHTML += 
+				   " - accion("+identificador+");"; 				
+			}
+			function accion2() {
+				document.getElementById("p2").innerHTML += " - accion2" 
+			}
+			document.getElementById("p2").ondblclick=accion2;
+		</script> 
+
+	</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Ejemplo audio y vídeo</title>
+      <style>         
+         video {
+            width: 600px;
+            height: 450px;
+            border: 1px solid black;
+         }
+      </style>
+   </head>
+
+   <body>
+      <button id="boton"autoplay>Abrir cámara</button>
+      <br><br>
+      <video id="video"></video>
+
+      <script>
+      document.addEventListener("DOMContentLoaded", () => {
+         let boton = document.getElementById("boton");
+         let video = document.getElementById("video");
+         let mediaDevices = navigator.mediaDevices;
+         boton.addEventListener("click", () => {
+            // Accediendo a la cámara
+            mediaDevices
+               .getUserMedia({
+                  video: true,
+                  audio: true,
+               })
+               .then((stream) => {
+                  // Cambiar la fuente de vídeo al stream actual
+                  video.srcObject = stream;
+                  video.addEventListener("loadedmetadata", () => {
+                     video.play();
+                  });
+               })
+               .catch(alert);
+            });
+         });
+      </script>
+
+   </body>
+
+</html>

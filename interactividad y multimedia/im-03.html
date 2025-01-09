@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+   <head>
+       <title>DOM</title>
+       <meta charset="utf-8">
+   </head>
+   <body>
+      <button id="button1" onclick="funcion1()">Botón</button>
+      <script>
+         var b1 = document.getElementById("button1");
+         b1.addEventListener("click", funcion2);
+         b1.addEventListener("click", funcion3);
+         b1.addEventListener("mouseover", funcion4);
+         b1.addEventListener("click", funcion5);
+         b1.removeEventListener("click", funcion2);
+
+         function funcion1(){
+          alert("Dentro de funcion1()");
+         }
+
+         function funcion2(){
+          console.log("Dentro de funcion2()");
+         }
+
+         function funcion3(){
+          console.log("Dentro de funcion3()");
+         }
+
+         function funcion4(){
+          console.log("Dentro de funcion4()");
+         }
+
+         function funcion5(){
+          console.log("Dentro de funcion5()");
+         }
+      </script>
+   </body>
+</html> 
+
+
+
+

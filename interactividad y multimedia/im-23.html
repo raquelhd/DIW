@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Ejemplo compartición de pantalla</title>
+      <style>         
+         video {
+            width: 750px;
+            height: 450px;
+            border: 1px solid black;
+         }
+      </style>
+   </head>
+
+   <body>
+      <button id="start">Compartir pantalla</button>
+      <button id="stop">Dejar de compartir</button>
+      <br><br>
+      <video id="video" autoplay></video>
+
+      <script>
+         const videoElem = document.getElementById("video");
+         const startButton = document.getElementById("start");
+         const stopButton = document.getElementById("stop");
+
+         // Configuracion de los listeners de start y stop
+         startButton.addEventListener("click", function (event) {
+             startCapture();
+         }, false);
+        stopButton.addEventListener("click", function (event) {
+             stopCapture();
+         }, false);
+         // Empezar la captura
+         async function startCapture() {
+             try {
+                 videoElem.srcObject = await navigator.mediaDevices.getDisplayMedia();
+             } catch (err) {
+                 console.error("Error: " + err);
+             }
+         }
+         // Parar la captura
+         function stopCapture(evt) {
+             let tracks = videoElem.srcObject.getTracks();
+             tracks.forEach(track => track.stop());
+             videoElem.srcObject = null;
+         }         
+      </script>
+
+   </body>
+</html>

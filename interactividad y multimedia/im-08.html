@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Eventos en el arrastre de objetos</title>
+	<style>
+	.prueba > * { float:left; }
+	.hueco {
+		margin-left: 10px;
+		margin-right: 10px;
+		width: 110px;
+		height: 180px;
+		border: solid black thin;
+	}
+	img{
+		border: dotted thin red;
+		width: 100px;
+		margin: 3px 3px;
+	}
+</style>
+</head>
+<body>
+	<div class="prueba">
+		<div class="hueco"><img id="carta"  src="carta.png" draggable="true"></div>
+		<div class="hueco" id="destino"></div>
+		<div style="clear:both;">Evento/estado carta: <span id="estadoCarta">Nada</span> </div>
+		<br>
+		<div style="clear:both;">Evento/estado destino: <span id="estadoDestino">Nada</span></div>
+		<br>
+		<button style="clear:both;" onclick="resetear(estadoCarta); resetear(estadoDestino);">Reset</button>
+	</div>
+	<script>
+		var carta = document.getElementById("carta");
+		var destino = document.getElementById("destino");
+		var estadoCarta = document.getElementById("estadoCarta");
+		var estadoDestino = document.getElementById("estadoDestino");
+		var estadoInicial = "Nada";
+
+		function resetear(elem) {
+			with (elem) {
+				elemento.innerHTML=estadoInicial;
+				estadoAnterior=estadoInicial;
+				estadoAcumulado = "";
+				veces = 1;
+			}
+		}
+
+		var estadoCarta = { elemento: document.getElementById("estadoCarta"),
+			estadoAnterior: estadoInicial,
+			estadoAcumulado: "",
+			veces: 1
+		}
+
+		var estadoDestino = { elemento: document.getElementById("estadoDestino"),
+			estadoAnterior: estadoInicial,
+			estadoAcumulado: "",
+			veces: 1
+		}
+
+		function acumularEstado( elem, estado ) {
+			with (elem) {
+				if ( estado == estadoAnterior ) {
+					veces++;
+					elemento.innerHTML = estadoAcumulado + estado + "(" + veces + ")";
+				} else {
+					if (estadoAnterior!=estadoInicial) {
+						estadoAcumulado += estadoAnterior + "(" + veces + ")-";
+						elemento.innerHTML = estadoAcumulado + estado + "(1)-";
+					}
+					estadoAnterior = estado;
+					veces = 1;
+				}
+			}
+		}
+
+		// Evento simple
+		carta.ondragstart = function(e) {
+			acumularEstado(estadoCarta, "ondragstart");
+			e.dataTransfer.setData("text", e.target.id);
+			console.log("e.target.id=" + e.target.id);
+		}
+		// Evento múltiple
+		carta.ondrag = function(e) {
+			acumularEstado(estadoCarta, "ondrag");
+		}
+		// Evento simple
+		carta.ondragend = function(e) {
+			acumularEstado(estadoCarta, "ondragend");
+		}
+		// Evento simple
+		destino.ondragenter = function(e) {
+			e.preventDefault();
+			acumularEstado(estadoDestino, "ondragenter");
+		}
+		// Evento múltiple
+		destino.ondragover = function(e) {
+			e.preventDefault();
+			acumularEstado(estadoDestino, "ondragover");
+		}
+		// Evento simple
+		destino.ondragleave = function(e) {
+			e.preventDefault();
+			acumularEstado(estadoDestino, "ondragleave");
+		}
+		// Evento simple
+		destino.ondrop = function(e) {
+			e.preventDefault();
+			acumularEstado(estadoDestino, "ondrop") ;
+			var data=e.dataTransfer.getData("text");
+			console.log("data=" + data);
+			var carta = document.getElementById(data);
+			this.appendChild(carta.cloneNode());
+		}		
+</script>
+</body>

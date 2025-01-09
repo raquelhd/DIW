@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <title>Example</title>
+      <style>
+         table, th, td {
+            border: thin solid black; 
+            border-collapse: collapse;
+         }
+         th, td {
+            padding: 3px 4px;
+         }
+         table {
+            margin-top: 21px !important;
+         }
+         body > * {float: left; margin: 2px;}
+      </style>
+   </head>
+
+   <body>
+      <video id="media" controls width="360" height="240" preload="metadata">
+         <source src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Big_Buck_Bunny_4K.webm"/>
+         Video cannot be displayed
+      </video>
+
+      <table id="info">
+         <tr><th>Property</th><th>Value</th></tr>
+      </table>
+
+      <script>
+         var mediaElem = document.getElementById("media");
+         var tableElem = document.getElementById("info");
+         var propertyNames = ["autoplay", "controls", "loop", "muted",
+         "preload", "volume"];
+         for (var i = 0; i < propertyNames.length; i++) {
+            tableElem.innerHTML +=
+            "<tr><td>" + propertyNames[i] + "</td><td>" +
+            mediaElem[propertyNames[i]] + "</td></tr>";
+         }
+      </script>
+   </body>
+</html>
+

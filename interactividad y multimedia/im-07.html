@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Drag&amp;Drop</title>
+		<meta charset="utf-8">
+		<style>
+		    div#zona1, div#zona2 {
+				display: inline-block;
+				position: relative;
+				width: 100px; 
+				height: 100px;
+				border: solid thin black;
+			}			
+			div img{
+				position:absolute;
+				margin: 12.5px 12.5px;
+				width: 75%;
+			}			
+		</style>
+	</head>
+	
+	<body>
+		<div id="zona1" ondrop="drop(event)" ondragover="allowDrop(event)">
+  			<img id="bola" src="bola.png" draggable="true" ondragstart="dragStart(event)"/>
+		</div>
+		<div id="zona2" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+		<script>
+			function dragStart(event) {
+			  event.dataTransfer.setData("Text", event.target.id);
+			}
+
+			function allowDrop(event) {
+			  event.preventDefault();
+			}
+
+			function drop(event) {
+			  event.preventDefault();
+			  var data = event.dataTransfer.getData("Text");
+			  event.target.appendChild(document.getElementById(data));
+			}
+		</script>
+	</body>
+</html>

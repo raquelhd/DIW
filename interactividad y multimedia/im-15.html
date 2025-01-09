@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <title>Ejemplo</title>
+      <meta charset="utf8">
+      <style>
+      table {
+         border: thin solid black; border-collapse: collapse;
+      }
+      th, td {
+         padding: 3px 4px;
+      }
+      table {
+            margin-top: 21px !important;
+         }
+      body > * {
+         float: left; margin: 2px;
+      }
+      div {
+         clear: both;
+      }
+      </style>
+   </head>
+   <body>
+      <video id="media" controls width="360" height="240" preload="metadata"
+      src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Big_Buck_Bunny_4K.webm">
+         Video cannot be displayed
+      </video>
+      <table id="info" border="1">
+         <tr><th>Property</th><th>Value</th></tr>
+      </table>
+      <div>
+         <button id="pulsame">Púlsame</button>
+      </div>
+
+      <script>
+      var mediaElem = document.getElementById("media");
+      var tableElem = document.getElementById("info");
+      document.getElementById("pulsame").onclick = displayValues;
+      displayValues();
+      function displayValues() {
+         var propertyNames = ["currentTime", "duration", "paused", "ended"];
+         tableElem.innerHTML = "<tr><th>Property</th><th>Value</th></tr>";
+         for (var i = 0; i < propertyNames.length; i++) {
+            tableElem.innerHTML +=
+            "<tr><td>" + propertyNames[i] + "</td><td>" +
+            mediaElem[propertyNames[i]] + "</td></tr>";
+         }
+      }
+      </script>
+   </body>
+</html>

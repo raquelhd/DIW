@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <title>Video JS</title>
+      <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
+   </head>
+
+   <body>
+     <video
+       id="my-video"
+       class="video-js"
+       controls
+       preload="auto"
+       width="640"
+       height="264"
+       poster="https://upload.wikimedia.org/wikipedia/commons/c/c5/Big_buck_bunny_poster_big.jpg"
+       data-setup="{}"
+     >
+       <source src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Big_Buck_Bunny_4K.webm" type="video/webm">
+       <source src="http://video.webmfiles.org/big-buck-bunny_trailer.ogg" type="video/ogg">
+       <p class="vjs-no-js">
+         To view this video please enable JavaScript, and consider upgrading to a
+         web browser that
+         <a href="https://videojs.com/html5-video-support/" target="_blank"
+           >supports HTML5 video</a
+         >
+       </p>
+     </video>
+
+     <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
+   </body>
+</html>
+
