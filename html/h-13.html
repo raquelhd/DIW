@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es-ES">
+    <head>
+        <title>Ejemplos de listas</title>
+        <meta charset="utf-8"/>
+    </head> 
+
+    <body>
+        <p>Lista numerada: temario de la asignatura:</p>
+        <ol>
+            <li>Introducción al desarrollo web</li>
+            <ol>
+                <li>Fundamentos y tecnologías</li>
+                <li>Herramientas para el desarrollo web</li>
+            </ol>
+            <li>Tecnologías fundamentales</li>
+            <ol>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ol>
+            <li>Tecnologías actuales de front-end</li>
+            <li>Buenas prácticas</li>
+        </ol>
+
+        <p>Con enumeración alfabética comenzando en 3 (a, b y <b>c</b>) 
+            y en sentido inverso. Se fuerza a que el cuarto elemento tenga 
+            orden 0 (no existe en enumeración alfabética: obsérvese qué ocurre 
+            cuando se llega a cero o números negativos):
+        </p>
+        <ol type="a" start="3" reversed>
+            <li>Introducción al desarrollo web</li>
+                <ol>
+                    <li>Fundamentos y tecnologías</li>
+                    <li>Herramientas para el desarrollo web</li>
+                </ol>
+            <li>Tecnologías fundamentales</li>
+            <ol>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ol>
+            <li value="0">Tecnologías actuales de front-end</li>
+            <li>Buenas prácticas</li>
+        </ol>
+
+        <hr>
+
+        <p>Lista no numerada:</p>
+        <ul>
+            <li>Introducción al desarrollo web</li>
+            <ul>
+                <li>Fundamentos y tecnologías</li>
+                <li>Herramientas para el desarrollo web</li>
+            </ul>
+            <li>Tecnologías fundamentales</li>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+            <li>Tecnologías actuales de front-end</li>
+            <li>Buenas prácticas</li>
+        </ul>
+    </body>
+</html>

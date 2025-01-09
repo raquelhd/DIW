@@ -1,0 +1,1 @@
+document.write("...(Esto viene del script EXTERNO)...");

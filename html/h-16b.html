@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es-ES">
+	<head>
+	   <title>Ejemplo de formulario</title>
+	   <meta charset="utf-8"/>
+	</head> 
+  
+  <body>
+    <h2>Formulario HTML</h2>
+    <form action="/ejemplo.php" method="post">
+      <label for="nombre">Nombre:</label><br>
+      <input type="text" id="nombre" name="nombre" placeholder="Pon aquí tu nombre"><br><br>
+      
+      <label for="apellido">Apellido:</label><br>
+      <input type="text" id="apellido" name="apellido"><br><br>
+      
+      <label for="sexo">Sexo:</label><br>
+      <input type="radio" id="sexo_hombre" name="sexo" value="Hombre">Hombre<br>
+      <input type="radio" id="sexo_mujer" name="sexo" value="Mujer">Mujer<br>
+      <input type="radio" id="sexo_otro" name="sexo" value="Otro">Otro<br><br>
+      
+      <label for="lenguajes">Lenguajes que dominas:</label><br>
+      <input type="checkbox" id="lenguajes_html" name="lenguajes" value="HTML">HTML<br>
+      <input type="checkbox" id="lenguajes_css" name="lenguajes" value="CSS">CSS<br>
+      <input type="checkbox" id="lenguajes_js" name="lenguajes" value="JavaScript">JavaScript<br><br>
+      
+      <label for="descripcion">Descripción:</label><br>
+      <textarea id="descripcion" name="descripcion" rows="4"></textarea><br><br>
+
+      <input type="submit" value="Envía">
+    </form> 
+
+    <p>Si pulsa el botón "Envía", el formulario se enviará a una página llamada "/ejemplo.php".</p>
+  </body>
+</html>
